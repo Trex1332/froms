@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Results:</h2>
+
+<div class="container">
+    {% if session['fmap'] == "woods" %}
+    <div class="card">
+        <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/04/Escape-From-Tarkov-Woods-1.jpg" alt="" width="100%">
+        <div class="container">
+            <h3>Favourite map is:</h3>
+            <h4>Woods</h4>
+        </div>
+    </div>
+    {% elif session['fmap'] == "customs"%}
+    <div class="card">
+        <img src="https://cdn.mos.cms.futurecdn.net/mY6y4p323kaoa7bPbij7f8.jpg" alt="" width="100%">
+        <div class="container">
+            <h3>Favourite map is:</h3>
+            <h4>Customs</h4>
+        </div>
+    {% elif session['fmap'] == "labs"%}
+    <div class="card">
+        <img src="https://i.imgur.com/f7XyIjm.jpg" alt="" width="100%">
+        <div class="container">
+            <h3>Favourite map is:</h3>
+            <h4>Labs</h4>
+        </div>
+    {% elif session['fmap'] == "interchange"%}
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQicjR4jt7AKcRAWMLXDOTVORlfe3H-HMgcWQ&s" alt="" width="100%">
+        <div class="container">
+            <h3>Favourite map is:</h3>
+            <h4>Interchange</h4>
+        </div>
+    {% elif session['fmap'] == "light"%}
+        <div class="card">
+            <img src="https://media.assettype.com/afkgaming%2F2023-04%2F7adb92b5-2db6-46b7-bd3d-5167c8d24746%2FUntitled_design___2023_04_14T142043_750.jpg?auto=format%2Ccompress&dpr=1.0&w=1200" alt="" width="100%">
+            <div class="container">
+                <h3>Favourite map is:</h3>
+                <h4>LightHouse</h4>
+            </div>
+    {% else %}
+    <p>No map selected</p>
+    {% endif %}
+    
+
+
+</div>
+
+{% endblock %}
+

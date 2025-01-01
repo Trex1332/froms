@@ -7,10 +7,9 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'key'
 
 class tarkov (FlaskForm):
-    fmap = RadioField("favourite map:  ",choices=[("woods","Woods"),("customs","Customs"),("labs","Labs"),("interchange","Interchange"),("light","Lighthouse"),("Ground","Ground Zero"),("reserve","Reserve"),("Streets","Streets"),("shorline","Shortline")])
-    ftrader = RadioField("favourite Trader:  ",choices=[("Prapor","Prapor"),("therapist","Therapist"),("skeir","Skeir"),("peacekeeper","PeaceKeeper")("mechanic","Mechanic"),("jager","Jager","Ref","Ref")])
-    wmap = RadioField("favourite map:  ",choices=[("woods","Woods"),("customs","Customs"),("labs","Labs"),("interchange","Interchange"),("light","Lighthouse"),("Ground","Ground Zero"),("reserve","Reserve"),("Streets","Streets"),("shorline","Shortline")])
-    wgun = StringField("Worse Gun in game: ")
+    fmap = RadioField("Favourite map:  ",choices=[("woods","Woods"),("customs","Customs"),("labs","Labs"),("interchange","Interchange"),("light","Lighthouse"),("Ground","Ground Zero"),("reserve","Reserve"),("Streets","Streets"),("shorline","Shortline")])
+    ftrader = RadioField("Favourite Trader:  ",choices=[("Prapor","Prapor"),("therapist","Therapist"),("skeir","Skeir"),("peacekeeper","PeaceKeeper"),("mechanic","Mechanic"),("jager","Jager"),("Ref","Ref")])
+    wmap = RadioField("Worse map:  ",choices=[("woods","Woods"),("customs","Customs"),("labs","Labs"),("interchange","Interchange"),("light","Lighthouse"),("Ground","Ground Zero"),("reserve","Reserve"),("Streets","Streets"),("shorline","Shortline")])
     deaths = IntegerField("How many deaths do you think you have had over the time you have been playing: ")
     submit = SubmitField("Submit")
 
@@ -23,14 +22,16 @@ def index():
         session['fmap']= form.fmap.data
         session['ftrader']= form.ftrader.data
         session['wmap']= form.wmap.data
-        session['wgun']= form.wgun.data
+
         session['deaths']= form.deaths.data
 
         return redirect(url_for('stats'))
-    return render_template("home.html")
+    return render_template("home.html", form = form)
 
 @app.route('/stats')
 def stats():
-    
+
     return render_template("stats.html")
-                         
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Survey Quetions</h2>
+<form method="post">
+{{form.hidden_tag()}}
+{{form.fmap.label}}{{form.fmap}}
+<br>
+{{form.ftrader.label}}{{form.ftrader}}
+
+<br>
+
+{{form.wmap.label}}{{form.wmap}}
+
+<br>
+
+
+{{form.deaths.label}}{{form.deaths}}
+
+<br>
+
+{{form.submit}}
+</form>
+{% endblock %}
