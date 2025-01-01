@@ -15,10 +15,22 @@ class tarkov (FlaskForm):
     submit = SubmitField("Submit")
 
 
-@app.route('/')
+@app.route('/',methods=["GET","POST"])
 def index():
-    form = tarkov
+    form = tarkov()
 
     if form.validate_on_submit():
         session['fmap']= form.fmap.data
+        session['ftrader']= form.ftrader.data
+        session['wmap']= form.wmap.data
+        session['wgun']= form.wgun.data
+        session['deaths']= form.deaths.data
+
+        return redirect(url_for('stats'))
+    return render_template("home.html")
+
+@app.route('/stats')
+def stats():
+    
+    return render_template("stats.html")
                          
