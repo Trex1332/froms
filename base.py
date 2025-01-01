@@ -10,5 +10,15 @@ class tarkov (FlaskForm):
     fmap = RadioField("favourite map:  ",choices=[("woods","Woods"),("customs","Customs"),("labs","Labs"),("interchange","Interchange"),("light","Lighthouse"),("Ground","Ground Zero"),("reserve","Reserve"),("Streets","Streets"),("shorline","Shortline")])
     ftrader = RadioField("favourite Trader:  ",choices=[("Prapor","Prapor"),("therapist","Therapist"),("skeir","Skeir"),("peacekeeper","PeaceKeeper")("mechanic","Mechanic"),("jager","Jager","Ref","Ref")])
     wmap = RadioField("favourite map:  ",choices=[("woods","Woods"),("customs","Customs"),("labs","Labs"),("interchange","Interchange"),("light","Lighthouse"),("Ground","Ground Zero"),("reserve","Reserve"),("Streets","Streets"),("shorline","Shortline")])
+    wgun = StringField("Worse Gun in game: ")
+    deaths = IntegerField("How many deaths do you think you have had over the time you have been playing: ")
+    submit = SubmitField("Submit")
 
+
+@app.route('/')
+def index():
+    form = tarkov
+
+    if form.validate_on_submit():
+        session['fmap']= form.fmap.data
                          
