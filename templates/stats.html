@@ -40,13 +40,91 @@
                 <h3>Favourite map is:</h3>
                 <h4>LightHouse</h4>
             </div>
+            {% elif session['fmap'] == "Ground"%}
+            <div class="card">
+                <img src="https://escorenews.com/media/news/pic-20231228-1920x1080-9294526990.jpeg" alt="" width="100%">
+                <div class="container">
+                    <h3>Favourite map is:</h3>
+                    <h4>Ground Zero</h4>
+                </div>
+        {% elif session['fmap'] == "reserve"%}
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzqiAjuyqZii_s7eH-hpTR9Zbw8UQsVNHDnA&s" alt="" width="100%">
+                <div class="container">
+                    <h3>Favourite map is:</h3>
+                    <h4>Reserve</h4>
+                </div>
+                {% elif session['fmap'] == "Streets"%}
+                <div class="card">
+                    <img src="https://i.ytimg.com/vi/iKA_uL3jHTA/maxresdefault.jpg" alt="" width="100%">
+                    <div class="container">
+                        <h3>Favourite map is:</h3>
+                        <h4>Streets of Tarkov</h4>
+                    </div>
+
+                    {% elif session['fmap'] == "shorline"%}
+                    <div class="card">
+                        <img src="https://www.savingcontent.com/wp-content/uploads/2017/05/eft_shoreline_wip11.jpg" alt="" width="100%">
+                        <div class="container">
+                            <h3>Favourite map is:</h3>
+                            <h4>ShoreLine</h4>
+                        </div>
     {% else %}
     <p>No map selected</p>
     {% endif %}
-    
+    </div>
+    <div class="container">
+        {% if session['ftrader'] == "Prapor" %}
+        <div class="card">
+            <img src="https://i.ytimg.com/vi/SRpSpXgp0FM/maxresdefault.jpg" alt="" width="100%">
+            <div class="container">
+                <h3>Favourite Trader is:</h3>
+                <h4>Prapor</h4>
+            </div>
+            {% elif session['ftrader'] == "therapist" %}
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/JBIMSBPfLO8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAwS1HG4-Iu9g7mI4rNH1h458tUxw" alt="" width="100%">
+                <div class="container">
+                    <h3>Favourite Trader is:</h3>
+                    <h4>Therapist</h4>
+                </div>
+                {% elif session['ftrader'] == "skeir" %}
+                <div class="card">
+                    <img src="https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e9/SkierFullRes.jpg/revision/latest/scale-to-width-down/320?cb=20180417001355" alt="" width="100%">
+                    <div class="container">
+                        <h3>Favourite Trader is:</h3>
+                        <h4>Therapist</h4>
+                    </div>
+                    {% elif session['ftrader'] == "therapist" %}
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/JBIMSBPfLO8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAwS1HG4-Iu9g7mI4rNH1h458tUxw" alt="" width="100%">
+                        <div class="container">
+                            <h3>Favourite Trader is:</h3>
+                            <h4>Therapist</h4>
+                        </div>
+
+                        {% elif session['ftrader'] == "therapist" %}
+                        <div class="card">
+                            <img src="https://i.ytimg.com/vi/JBIMSBPfLO8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAwS1HG4-Iu9g7mI4rNH1h458tUxw" alt="" width="100%">
+                            <div class="container">
+                                <h3>Favourite Trader is:</h3>
+                                <h4>Therapist</h4>
+                            </div>
+                            {% elif session['ftrader'] == "therapist" %}
+                            <div class="card">
+                                <img src="https://i.ytimg.com/vi/JBIMSBPfLO8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAwS1HG4-Iu9g7mI4rNH1h458tUxw" alt="" width="100%">
+                                <div class="container">
+                                    <h3>Favourite Trader is:</h3>
+                                    <h4>Therapist</h4>
+                                </div>
+        {% else %}
+        <p>No map selected</p>
+        {% endif %}
+        </div>
 
 
-</div>
+
+
 
 {% endblock %}
 
